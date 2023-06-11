@@ -1,1 +1,165 @@
-Dubi dubi duba dubi dubi duba Dubi dubi duba
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IKE KULUPU</title>
+		<style>
+			@import url("https://fonts.cdnfonts.com/css/playbill");
+		</style>
+
+		<style>
+			@keyframes pulse {
+				0% {
+					transform: rotate(45deg) scale(0.95);
+					border-color: #7e3aa9;
+				}
+
+				70% {
+					transform: rotate(45deg) scale(1);
+					border-color: #8651a7;
+				}
+
+				100% {
+					transform: rotate(45deg) scale(0.95);
+					border-color: #7e3aa9;
+				}
+			}
+
+			.arrow {
+				border: solid #7e3aa9;
+				border-width: 0 3em 3em 0;
+				display: none;
+				padding: 3em;
+				transform: rotate(45deg);
+				animation: pulse 2s infinite;
+			}
+		</style>
+
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: "Playbill", sans-serif;
+				color: #7e3aa9;
+				margin: 0;
+				background: repeating-linear-gradient(90deg, #8587af, #8587af 100px, #737196 100px, #9d9bc7 120px);
+			}
+
+			* {
+				font-weight: normal;
+			}
+
+			h1 {
+				background: linear-gradient(90deg, #82b189, #71d481);
+				box-shadow: inset 0 0 6px 2px #47644c;
+				font-size: 7em;
+				padding: 20px 40px;
+			}
+
+			.mainContainer {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+			}
+
+			.infoContainer {
+				font-family: Arial, Helvetica, sans-serif;
+				background: linear-gradient(90deg, #82b189, #71d481);
+				padding: 20px;
+				box-shadow: inset 0 0 6px 2px #47644c;
+				font-size: 1.5em;
+				margin: 50px 0;
+			}
+
+			.small {
+				font-size: 0.5em;
+			}
+
+			.tab {
+				padding-left: 20px;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.title {
+				padding-top: 30px;
+			}
+
+			ol {
+				margin: 0;
+			}
+
+			@media screen and (min-width: 1220px) {
+				.mainContainer {
+					flex-direction: row;
+					height: 100vh;
+					justify-content: space-evenly;
+				}
+			}
+
+			@media screen and (max-width: 550px) {
+				.mainTitle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					height: 100vh;
+				}
+
+				.infoContainer {
+					min-height: calc(100vh - 40px);
+					margin: 0;
+				}
+
+				.mainTitle .arrow {
+					display: inline-block;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mainContainer">
+			<div class="mainTitle">
+				<h1>
+					<span class="small">Strona koła naukowego</span>
+					<br />
+					IKE KULUPU
+				</h1>
+				<i id="navigateToDescription" class="arrow"></i>
+			</div>
+			<div id="info" class="infoContainer">
+				<div class="title bold">Cele koła naukowego</div>
+				<ol>
+					<li>Programowanie mikrokontrolerów</li>
+					<li>Projektowanie systemów wbudowanych</li>
+					<li>Modelowanie systemów wbudowanych</li>
+					<li>Inżynieria odwrotna systemów wbudowanych</li>
+					<li>Techniczne aspekty budowy i łączenia elementów elektronicznych</li>
+				</ol>
+				<div class="title bold">Adres korespondencyjny</div>
+				<div class="tab">
+					Wybrzeże Wyspiańskiego 27
+					<br />
+					50-370 Wrocław
+				</div>
+				<div class="title bold">Adres email</div>
+				<div class="tab">
+					<a href="mailto:ikekulupu@gmail.com">ikekulupu@gmail.com</a>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		document.getElementById("navigateToDescription").onclick = () => {
+			location.href = "#info";
+		};
+	</script>
+</html>
